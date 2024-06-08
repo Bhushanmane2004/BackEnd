@@ -1,6 +1,8 @@
 import express from'express'
 import cors from 'cors'
 import { connectDB } from './Configure/db.js';
+import userroute from './Routers/UserRoute.js';
+import "dotenv/config.js"
 // import { connectDB } from './Configure/db.js';
 
 
@@ -17,6 +19,8 @@ app.use(cors());
 app.get("/",(req,res)=>{
     res.send("Run");
 })
+
+app.use("/api/user",userroute)
 
 connectDB();
 

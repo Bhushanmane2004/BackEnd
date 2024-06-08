@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 export const connectDB = async () => {
     try {
-        const mongoURI = 'mongodb+srv://Gen-Health-Hub:Viit%401223334444@cluster0.xx1um6u.mongodb.net/test?retryWrites=true&w=majority';
+        const mongoURI = process.env.moogoapi;
         await mongoose.connect(mongoURI, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
